@@ -6,8 +6,6 @@ select R.rental_id "ID_ALQUILER",
 	year(R.rental_date) "AÑO_RENTA",
     month(R.rental_date) "MES_RENTA",
     quarter(R.rental_date) "CUATRI_RENTA",
-    date(R.return_date) "DIA_DEVOLUCION",
-    R.last_update "ULTIMA ACTUALIZACION",
     (Select Fi.title from film Fi where Fi.film_id = (Select I.film_id from inventory I where  R.inventory_id = I.inventory_id)) "TITULO_PELICULA",
     (Select Fi.description from film Fi where Fi.film_id = (Select I.film_id from inventory I where  R.inventory_id = I.inventory_id)) "DESCRIPCION",
     (Select Fi.release_year from film Fi where Fi.film_id = (Select I.film_id from inventory I where  R.inventory_id = I.inventory_id)) "AÑO",
@@ -26,7 +24,7 @@ select R.rental_id "ID_ALQUILER",
 	(Select username from staff S where S.store_id = (Select I.store_id from inventory I where R.inventory_id = I.inventory_id)) "USERNAME",
     date(R.return_date) "DIA_DEVOLUCION",
     (Select amount from payment Pa where Pa.rental_id = R.rental_id) "MONTO",
-    (Select payment_date from payment Pa where Pa.rental_id = R.rental_id) "FECHA_PAGO",
-    R.last_update "ULTIMA ACTUALIZACION"
+    date((Select payment_date from payment Pa where Pa.rental_id = R.rental_id)) "FECHA_PAGO",
+    date(R.last_update) "ULTIMA ACTUALIZACION"
 from rental R;
 #----------- Consulta --------------#
