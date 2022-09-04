@@ -31,4 +31,4 @@ select R.rental_id "ID_ALQUILER",
 from rental R,
 	 payment P
 where R.rental_id = P.rental_id;
-###$
+####
