@@ -1,14 +1,13 @@
+category,- all -
 ,
-"category","- all -"
-,
-"rating","Sum - sale_price"
+rating,Sum - sale_price
 1,198394.03
 2,87536.39
 3,273729.84
 4,535122.28
 5,643425.05
-"(empty)",3818247.04
-"Total Result",5556454.63000001
+(empty),3818247.04
+Total Result,5556454.63000001
 ,
 ,
-"Conclusión: los producto que no estan calificados suman el mayor monto total.",
+Conclusión: los producto que no estan calificados suman el mayor monto total.,
